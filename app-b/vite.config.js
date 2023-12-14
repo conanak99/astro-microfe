@@ -8,12 +8,12 @@ export default ({ command }) => ({
   preview: {
     port: 7200,
     open: true,
-  }, 
+  },
   build: {
     rollupOptions: {
       input: resolve(__dirname, "src/MicroFrontend.jsx"),
       preserveEntrySignatures: "exports-only",
-      external: ["react", "react-dom"],
+      external: ["react", "react-dom", "usehooks-ts"],
       output: {
         entryFileNames: "bundle.js",
         format: "esm",

@@ -1,48 +1,54 @@
 ---
-import ReactComponent from "../components/ReactComponent.jsx";
-import SolidComponent from "../components/SolidComponent.jsx";
+import ComponentA from "../components/ComponentA.jsx";
+import ComponentB from "../components/ComponentB.jsx";
+import ComponentC from "../components/ComponentC";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{"Astro example"}</title>
     <script type="importmap">
-    {
-      "imports": {
-        "react": "https://esm.sh/react",
-        "react-dom": "https://esm.sh/react-dom",
-        "solid-js": "https://esm.sh/solid-js"
+      {
+        "imports": {
+          "react": "https://esm.sh/react",
+          "usehooks-ts": "https://esm.sh/usehooks-ts",
+          "react-dom": "https://esm.sh/react-dom",
+          "solid-js": "https://esm.sh/solid-js"
+        }
       }
-    }
     </script>
+    <script is:inline src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <main>
       <h1>Welcome to Astro</h1>
-      <ReactComponent client:only="react" />
-      <SolidComponent client:only="solid" />
+
+      <div class="flex mt-4 items-stretch gap-x-4">
+        <ComponentA client:only="react" />
+        <ComponentB client:only="react" />
+        <ComponentC client:only="solid" />
+      </div>
     </main>
   </body>
 </html>
 
 <style>
-html {
-  font-family: system-ui, sans-serif;
-  background-color: #f6f6f6;
-}
+  html {
+    font-family: system-ui, sans-serif;
+    background-color: #f6f6f6;
+  }
 
-main {
-  margin: auto;
-  padding: 1.5rem;
-  max-width: 60ch;
-}
+  main {
+    margin: auto;
+    padding: 1.5rem;
+  }
 
-h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin: 0;
-}
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
 </style>

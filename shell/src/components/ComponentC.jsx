@@ -1,11 +1,9 @@
 import MicroFrontendC from "http://localhost:7300/bundle.js";
 
-function App() {
+function ComponentC() {
   return (
-    <>
-      <MicroFrontendC />
-    </>
+    <MicroFrontendC />
   );
 }
 
-export default App;
+export default ComponentC;
