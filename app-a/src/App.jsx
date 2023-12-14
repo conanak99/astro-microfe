@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-import "./App.css";
-// import { useLocalStorage } from "usehooks-ts";
+import React from "react";
+import { useLocalStorage } from "usehooks-ts";
 
 const App = () => {
-  // const [text, setText] = useLocalStorage('text', '')
-  // const [text, setText] = React.useState('')
+  const [text, setText] = useLocalStorage('text', '')
 
   const broadcast = (operation) => {
     document.dispatchEvent(new CustomEvent("custom-evt", { detail: { operation } }))
@@ -22,18 +20,18 @@ const App = () => {
 
           <div className="px-4 py-2">
             <input type="text" placeholder="Sync value"
-              // value={text}
-              // onChange={(e) => setText(e.target.value)}
+              value={text}
+              onChange={(e) => setText(e.target.value)}
               className="block mt-2 w-full placeholder-gray-400/70 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" />
           </div>
 
           <div className="px-4 pt-2 pb-0">
             <div class="flex overflow-hidden bg-white border divide-x">
-              <button onClick={() => broadcast('up')} class="flex-1 px-4 py-2 text-sm font-medium text-gray-600">
+              <button onClick={() => broadcast('up')} className="flex-1 px-4 py-2 text-sm font-medium text-gray-600">
                 ⬆️ Increase
               </button>
 
-              <button onClick={() => broadcast('down')} class="flex-1 px-4 py-2 text-sm font-medium text-gray-600">
+              <button onClick={() => broadcast('down')} className="flex-1 px-4 py-2 text-sm font-medium text-gray-600">
                 ⬇️ Decrease
               </button>
             </div>

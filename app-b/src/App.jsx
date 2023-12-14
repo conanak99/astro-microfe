@@ -1,8 +1,8 @@
 import React from "react";
-import "./App.css";
+import { useLocalStorage } from "usehooks-ts";
 
 const App = () => {
-  // const [text] = useLocalStorage('text', '')
+  const [text] = useLocalStorage('text', '')
 
   return (
     <section className="app-b">
@@ -11,7 +11,7 @@ const App = () => {
 
         <div className="py-5 text-center">
           <a href="#" className="block text-xl font-bold text-gray-800" role="link">App B</a>
-          {/* <span className="text-sm text-gray-700">{text}</span> */}
+          <span className="text-sm text-gray-700">Value from other app: {text}</span>
         </div>
       </div>
     </section>
