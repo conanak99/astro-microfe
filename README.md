@@ -1,5 +1,7 @@
 # astro-microfrontends
 
+Forked from <https://github.com/sasoria/astro-microfrontends>
+
 This demo takes advantage of EcmaScript Modules (ESM) and url-imports to do client-side composition of microfrontends. Express is used for serving assets, but ideally one would have a dedicated CDN hosting them.
 
 ## Features
