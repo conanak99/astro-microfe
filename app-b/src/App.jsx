@@ -4,6 +4,10 @@ import { useLocalStorage } from "usehooks-ts";
 const App = () => {
   const [text] = useLocalStorage('text', '')
 
+  if (text.length > 10) {
+    throw new Error("Invalid value??")
+  }
+
   return (
     <section className="app-b">
       <div className="w-full h-full max-w-xs overflow-hidden bg-white rounded-lg shadow-lg">
