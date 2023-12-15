@@ -20,7 +20,7 @@ function App() {
 
 
   return (
-    <section className="app-b">
+    <section className="app-c">
       <div className="w-full max-w-xs overflow-hidden bg-white rounded-lg shadow-lg">
         <img className="object-cover w-full h-56" src="https://repository-images.githubusercontent.com/130884470/ad63fd00-7ab2-11ea-9c57-6c114391183a" alt="avatar" />
 
