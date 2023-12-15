@@ -1,0 +1,22 @@
+{
+  "name": "astro-microfe",
+  "scripts": {
+    "setup": "npm install && npm run setup:all",
+    "setup:all": "npm install --prefix app-a && npm install --prefix app-b && npm install --prefix app-c && npm install --prefix shell",
+    "start": "concurrently \"npm run start:app-a\" \"npm run start:app-b\" \"npm run start:app-c\" \"npm run start:shell\"",
+    "start:app-a": "cd app-a && npm run preview",
+    "start:app-b": "cd app-b && npm run preview",
+    "start:app-c": "cd app-c && npm run preview",
+    "start:shell": "cd shell && npm run preview",
+    "build": "concurrently \"npm run build:app-a\" \"npm run build:app-b\" \"npm run build:app-c\" \"npm run build:shell\"",
+    "build:app-a": "cd app-a && npm run build",
+    "build:app-b": "cd app-b && npm run build",
+    "build:app-c": "cd app-c && npm run build",
+    "build:shell": "cd shell && npm run build",
+    "clean": "rimraf node_modules && rimraf app-a/node_modules && rimraf app-b/node_modules && rimraf app-c/node_modules && rimraf shell/node_modules && rimraf app-a/dist && rimraf app-b/dist && rimraf app-c/dist && rimraf shell/dist"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "rimraf": "^5.0.5"
+  }
+}
