@@ -5,7 +5,7 @@ const App = () => {
   const [text] = useLocalStorage('text', '')
 
   if (text.length > 10) {
-    throw new Error("Invalid value??")
+    throw new Error(`Invalid value ${text}`)
   }
 
   return (
